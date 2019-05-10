@@ -36,9 +36,9 @@ class App extends React.Component {
         description: response.weather[0].description,
         error: ""
       })
-    }else{
+    } else{
       this.setState({
-        error: "Input a city 😡"
+        error: <marquee behavior="slide" scrollamount="40" direction="top">Input an actual city and country! 🙄🙄</marquee>
       })
     }
   }

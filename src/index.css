@@ -2,13 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
+*:focus {outline:none !important}
+
 body {
   font-family: "Open Sans", serif;
   margin: 0;
 }
 
+marquee {
+  text-align: center;
+}
+
+input {
+  background-color: red;
+}
+
 .wrapper {
-  background: linear-gradient(to right, #ceeaff, #0095ff);
+  background: linear-gradient(to right, #f2faff, #9afcff);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,7 +26,6 @@ body {
 }
 
 .main {
-  height: 50vh;
   background: #fff;
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
   width: 600px;
@@ -25,27 +34,35 @@ body {
 
 .title-container {
   margin: 0 auto;
-  padding: 10%;
-  /* background: url("img/bg.jpg") center center no-repeat; */
-  /* background-size: cover; */
+  padding: 10% 10% 0;
   text-align: center;
 }
-
-.titles {
-  font-size: 30px;
+.weather_app{
+  font-size: 70px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   color: #fa2626;
 }
 
+.titles {
+  font-size: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #49aee9;
+}
 
+form {
+  padding: 10% 0 0;
+}
 
 input[type="text"] {
-  background-color: transparent;
+  text-align: center;
+  background-color: white !important;
   border: 0;
   border-bottom: solid 1px #fa2626;
-  width: 30%;
+  width: 55%;
   padding-bottom: 4px;
   color: #49aee9 !important;
   letter-spacing: 2px;
@@ -53,26 +70,45 @@ input[type="text"] {
   margin-right: 20px;
   font-size: 20px;
   outline: none;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 
-input[type="name"] { 
-  color: red;
+input[type=text]:focus {
+  width: 80%;
+  background-color: white !important;
+  color: #49aee9 !important;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
-  -webkit-text-fill-color: #fff !important;
+::placeholder {
+  color: #fa2626;
+  opacity: 1; /* Firefox */
 }
 
 button {
   border: 0;
   padding: 8px 20px;
-  border-radius: 2px;
+  border-radius: 5px;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
+  background-color: #fff;
+  color: #49aee9;
+  border: 1px solid #49aee9;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  text-decoration: none;
+}
+
+button:hover {
   background-color: #49aee9;
   color: #fff;
+  border: 1px solid #49aee9;
+  padding: 8px 20px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 button:active {
@@ -91,9 +127,20 @@ button:active {
   font-weight: 200;
 }
 
+.response-container {
+  padding: 5% 0;
+}
+
+.response_weather {
+  margin: 0 auto;
+  padding: 10% 10% 0;
+}
+
 .output_weather {
-  float: left;
+  margin: 0 auto;
+  width: 70%;
   color: #fa2626;
   font-size: 20px;
-  width: 100%;
+  text-align: center;
+  
 }

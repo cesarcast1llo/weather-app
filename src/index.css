@@ -7,92 +7,87 @@
 body {
   font-family: "Open Sans", serif;
   margin: 0;
+  background: linear-gradient(to right, #f2faff, #9afcff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+h2 {
+  color: red;
+  font-family: "Roboto Slab", serif;
 }
 
 marquee {
   text-align: center;
-}
-
-input {
-  background-color: red;
-}
-
-.wrapper {
-  background: linear-gradient(to right, #f2faff, #9afcff);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  white-space: normal;
 }
 
 .main {
   background: #fff;
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
-  width: 600px;
-  margin: 0 auto;
 }
 
 .title-container {
-  margin: 0 auto;
-  padding: 10% 10% 0;
+  padding: 20px 0 0;
   text-align: center;
-}
-.weather_app{
-  font-size: 70px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fa2626;
 }
 
 .titles {
-  font-size: 25px;
+  font-size: 20px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   color: #49aee9;
+  margin: 0 auto;
+  padding: 0;
 }
 
 form {
-  padding: 10% 0 0;
+  padding: 25px 0 0;
+  margin: 0 auto;
 }
 
 input[type="text"] {
   text-align: center;
-  background-color: white !important;
+  background-color: white;
   border: 0;
   border-bottom: solid 1px #fa2626;
-  width: 55%;
+  width: 75%;
   padding-bottom: 4px;
-  color: #49aee9 !important;
+  color: #49aee9;
   letter-spacing: 2px;
   margin-bottom: 30px;
-  margin-right: 20px;
-  font-size: 20px;
+  font-size: 18px;
   outline: none;
   -webkit-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
 }
 
 input[type=text]:focus {
-  width: 80%;
-  background-color: white !important;
-  color: #49aee9 !important;
+  width: 90%;
+  background-color: white;
+  color: #49aee9;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset;
+  -webkit-text-fill-color: #49aee9;
 }
 
 ::placeholder {
-  color: #fa2626;
+  color: rgb(122, 122, 122);
   opacity: 1; /* Firefox */
+  font-size: 18px;
 }
 
 button {
-  border: 0;
-  padding: 8px 20px;
+  width: 50%;
+  padding: 3px 20px;
   border-radius: 5px;
   letter-spacing: 1px;
-  font-size: 25px;
+  font-size: 15px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: white;
   color: #49aee9;
   border: 1px solid #49aee9;
   -webkit-transition-duration: 0.2s;
@@ -102,13 +97,8 @@ button {
 
 button:hover {
   background-color: #49aee9;
-  color: #fff;
+  color: white;
   border: 1px solid #49aee9;
-  padding: 8px 20px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  font-size: 25px;
-  cursor: pointer;
 }
 
 button:active {
@@ -128,19 +118,31 @@ button:active {
 }
 
 .response-container {
-  padding: 5% 0;
-}
-
-.response_weather {
-  margin: 0 auto;
-  padding: 10% 10% 0;
+  padding: 20px 0 0;
 }
 
 .output_weather {
-  margin: 0 auto;
-  width: 70%;
-  color: #fa2626;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-  
+  padding: 0;
 }
+
+@media (min-width: 768px) {
+  .main {
+    width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  input[type="text"] {
+    width: 70%;
+  }
+
+  input[type=text]:focus {
+    width: 90%;
+  }
+
+  button {
+    width: 50%;
+  }
+ }

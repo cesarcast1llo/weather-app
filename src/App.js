@@ -27,7 +27,7 @@ class App extends React.Component {
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`);
     const response = await api_call.json();
     console.log(response);
-    if(response.message != 'city not found'){
+    if(response.message !== 'city not found'){
       this.setState({
         temperature: response.main.temp,
         city: response.name,
@@ -38,7 +38,7 @@ class App extends React.Component {
       })
     } else{
       this.setState({
-        error: <marquee behavior="slide" scrollamount="40" direction="top">Input an actual city and country! 🙄🙄</marquee>
+        error: <marquee behavior="slide" scrollamount="40" direction="top">Input an actual city and country! 🙄</marquee>
       })
     }
   }
@@ -46,30 +46,29 @@ class App extends React.Component {
   render() {
 
     return (
-
-        <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 title-container">
-                  <Form loadWeather={this.getWeather} />
-                </div>
-                <div className="col-12 response-container">
-                  <Weather
-                    temperature={this.state.temperature}
-                    city={this.state.city}
-                    country={this.state.country}
-                    humidity={this.state.humidity}
-                    description={this.state.description}
-                    error={this.state.error}
-                  />
-                </div>
-              </div>
-            </div>
+      <div className="container main">
+        <div className="row">
+          <div className="col-1"></div>
+          <div className="col-10 title-container">
+            <Form loadWeather={this.getWeather} />
           </div>
+          <div className="col-1"></div>
         </div>
-
-
+        <div className="row">
+          <div className="col-1"></div>
+          <div className="col-10 response-container">
+            <Weather
+              temperature={this.state.temperature}
+              city={this.state.city}
+              country={this.state.country}
+              humidity={this.state.humidity}
+              description={this.state.description}
+              error={this.state.error}
+            />
+          </div>
+          <div className="col-1"></div>
+        </div>
+        </div>
     )
   }
 }

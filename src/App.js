@@ -35,7 +35,7 @@ class App extends React.Component {
       })
     } else{
       this.setState({
-        error: <marquee behavior="slide" scrollamount="40" direction="top">Input an actual city and country! 🙄</marquee>
+        error: <marquee behavior="slide" scrollamount="40" direction="top">Type an actual city and country! 🙄</marquee>
       })
     }
   }
